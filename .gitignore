@@ -26,3 +26,4 @@ runlinters.sh
 install-linters-react.sh
 .eslintrc.json
 .stylelintrc.json
+package-lock.json
