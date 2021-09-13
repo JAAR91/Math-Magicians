@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+runlinters.sh
+install-linters-react.sh
+.eslintrc.json
+.stylelintrc.json
