@@ -3,7 +3,7 @@ import React from 'react';
 class Calculator extends React.Component {
   constructor() {
     super();
-    this.list = [];
+    this.display = 0;
   }
 
   render() {
