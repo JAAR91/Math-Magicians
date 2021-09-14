@@ -25,3 +25,19 @@ code {
     'Courier New',
     monospace;
 }
+
+.Calculator {
+  width: 700px;
+  margin: auto;
+}
+
+.bg-white {
+  border: 1px solid #adadad;
+  background-color: white;
+}
+
+.bg-orange {
+  border: 1px solid #adadad;
+  background-color: #f3ab4c;
+}
+
