@@ -35,7 +35,7 @@ class Calculator extends React.Component {
         <CalcButton text="+" Bclass="false" />
         <CalcButton text="0" Bclass="true" />
         <CalcButton text="." Bclass="true" />
-        <CalcButton text="=" Bclass="true" />
+        <CalcButton text="=" Bclass="false" />
       </div>
     );
     return value;
