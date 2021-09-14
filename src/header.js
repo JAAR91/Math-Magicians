@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './home';
 import Quote from './Quote';
-import myCalculator from './components/Calculator';
+import App from './App';
 
 const Header = () => {
   ReactDOM.render(
@@ -48,7 +48,7 @@ const Header = () => {
     }
 
     if (e.target.textContent === 'Calculator') {
-      myCalculator();
+      App();
       activeLinks('Calculator');
     }
   });

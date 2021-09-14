@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-export class Calculator extends React.Component {
+class Calculator extends React.Component {
   constructor() {
     super();
     this.list = [];
@@ -36,9 +35,4 @@ export class Calculator extends React.Component {
   }
 }
 
-const myCalculator = () => {
-  ReactDOM.render(<Calculator />,
-    document.getElementById('container'));
-};
-
-export default myCalculator;
+export default Calculator;
