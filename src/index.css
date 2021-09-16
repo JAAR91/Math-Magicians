@@ -40,3 +40,7 @@ code {
   border: 1px solid #adadad;
   background-color: #f3ab4c;
 }
+
+.CalcDisplay {
+  height: 90px;
+}
