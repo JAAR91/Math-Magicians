@@ -28,6 +28,9 @@ export const loadMissionsData = () => async (dispatch) => {
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_MISSIONS:
+      if (state !== initialState) {
+        return state;
+      }
       return action.payload;
     case JOIN_MISSION:
       return state.map((mission) => {
