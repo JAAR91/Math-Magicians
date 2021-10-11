@@ -6,6 +6,7 @@ import {
 import NavBar from './components/NavBar';
 import MyProfile from './components/MyProfile';
 import RocketList from './components/RocketList';
+import MissionsLists from './components/MissionsList';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <RocketList />
         </Route>
         <Route exact path="/missions">
-          <p>MISSIONS</p>
+          <MissionsLists />
         </Route>
         <Route exact path="/myprofile">
           <MyProfile />
