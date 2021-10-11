@@ -4,6 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import MyProfile from './components/MyProfile';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <p>MISSIONS</p>
         </Route>
         <Route exact path="/myprofile">
-          <p>My profile</p>
+          <MyProfile />
         </Route>
       </Switch>
     </>
