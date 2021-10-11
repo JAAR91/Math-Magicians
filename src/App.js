@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import MyProfile from './components/MyProfile';
+import RocketList from './components/RocketList';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <p>ROCKETS</p>
+          <RocketList />
         </Route>
         <Route exact path="/missions">
           <p>MISSIONS</p>
