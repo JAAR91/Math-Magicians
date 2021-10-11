@@ -17,40 +17,38 @@ const Mission = (props) => {
     dispatch(leaveMissions(id));
   };
 
-  const pillClass = (status) => {
-    if (status) {
-      return 'badge rounded-pill bg-info';
-    }
-    return 'badge rounded-pill bg-secondary';
-  };
-
-  const memberButton = (status) => {
-    if (status) {
-      return (<button className="btn btn-outline-danger" type="button" onClick={leaveMissionButton}>Leave Mission</button>);
-    }
-    return (<button className="btn btn-outline-dark" type="button" onClick={joinMissionsButton}>Join Mission</button>);
-  };
-
-  const StatusChecker = () => {
-    if (status) {
-      return 'ACTIVE MEMBER';
-    }
-    return 'NOT A MEMBER';
-  };
-
   return (
     <tr>
-      <td>
+      <td className="p-2">
         <p className="fs-6 fw-bold">{missionName}</p>
       </td>
-      <td>
+      <td className="p-3">
         {description}
       </td>
-      <td>
-        <span className={pillClass(status)}>{StatusChecker()}</span>
+      <td className="p-3">
+        <span className={status
+          ? 'badge rounded-pill bg-info'
+          : 'badge rounded-pill bg-secondary'}
+        >
+          {status
+            ? 'ACTIVE MEMBER'
+            : 'NOT A MEMBER'}
+        </span>
       </td>
-      <td>
-        {memberButton(status)}
+      <td className="p-3">
+        <button
+          className={status
+            ? 'btn btn-outline-danger'
+            : 'btn btn-outline-dark'}
+          type="button"
+          onClick={status
+            ? leaveMissionButton
+            : joinMissionsButton}
+        >
+          {status
+            ? 'Leave Mission'
+            : 'Join Mission'}
+        </button>
       </td>
     </tr>
   );
@@ -61,7 +59,7 @@ Mission.propTypes = {
     mission_id: PropTypes.string.isRequired,
     mission_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    status: PropTypes.bool.isRequired,
+    status: PropTypes.bool,
   }).isRequired,
 };
 

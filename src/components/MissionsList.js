@@ -15,8 +15,8 @@ const MissionsLists = () => {
   }, []);
 
   return (
-    <div className="container  table-bordered table-striped table-hover">
-      <table className="table table-striped">
+    <div className="container">
+      <table className="table table-striped table-bordered">
         <thead>
           <tr className="p-0 mx-0 my-1">
             <th scope="col">
@@ -28,14 +28,14 @@ const MissionsLists = () => {
             <th scope="col">
               <p className="fs-5">Status</p>
             </th>
-            <th scope="col">
-              <p className="fs-5 text-white">Mission</p>
+            <th scope="col p-4">
+              <p className="fs-5 text-white m-4">Buttons</p>
             </th>
           </tr>
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <Mission key={missions.id} data={mission} />
+            <Mission key={mission.mission_id} data={mission} />
           ))}
         </tbody>
       </table>
