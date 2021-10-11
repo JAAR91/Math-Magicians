@@ -1,9 +1,21 @@
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { joinMissions, leaveMissions } from '../redux/missions/Missions';
 
 const Mission = (props) => {
   const { data } = props;
   const missionName = data.mission_name;
+  const id = data.mission_id;
   const { description, status } = data;
+  const dispatch = useDispatch();
+
+  const joinMissionsButton = () => {
+    dispatch(joinMissions(id));
+  };
+
+  const leaveMissionButton = () => {
+    dispatch(leaveMissions(id));
+  };
 
   const pillClass = (status) => {
     if (status) {
@@ -14,9 +26,9 @@ const Mission = (props) => {
 
   const memberButton = (status) => {
     if (status) {
-      return (<button className="btn btn-outline-danger" type="button">Leave Mission</button>);
+      return (<button className="btn btn-outline-danger" type="button" onClick={leaveMissionButton}>Leave Mission</button>);
     }
-    return (<button className="btn btn-outline-dark" type="button">Join Mission</button>);
+    return (<button className="btn btn-outline-dark" type="button" onClick={joinMissionsButton}>Join Mission</button>);
   };
 
   const StatusChecker = () => {
@@ -46,6 +58,7 @@ const Mission = (props) => {
 
 Mission.propTypes = {
   data: PropTypes.shape({
+    mission_id: PropTypes.string.isRequired,
     mission_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     status: PropTypes.bool.isRequired,
