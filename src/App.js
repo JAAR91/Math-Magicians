@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import MyProfile from './components/MyProfile';
+import MissionsLists from './components/MissionsList';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <p>ROCKETS</p>
         </Route>
         <Route exact path="/missions">
-          <p>MISSIONS</p>
+          <MissionsLists />
         </Route>
         <Route exact path="/myprofile">
           <MyProfile />
