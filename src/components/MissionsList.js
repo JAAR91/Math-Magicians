@@ -15,23 +15,31 @@ const MissionsLists = () => {
   }, []);
 
   return (
-    <table className="container">
-      <tr>
-        <td>
-          Mission
-        </td>
-        <td>
-          Description
-        </td>
-        <td>
-          Status
-        </td>
-        <td />
-      </tr>
-      {missions.map((mission) => (
-        <Mission key={missions.id} data={mission} />
-      ))}
-    </table>
+    <div className="container">
+      <table className="table table-striped table-bordered">
+        <thead>
+          <tr className="p-0 mx-0 my-1">
+            <th scope="col">
+              <p className="fs-5">Mission</p>
+            </th>
+            <th scope="col">
+              <p className="fs-5">Description</p>
+            </th>
+            <th scope="col">
+              <p className="fs-5">Status</p>
+            </th>
+            <th scope="col p-4">
+              <p className="fs-5 text-white m-4">Buttons</p>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <Mission key={mission.mission_id} data={mission} />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
