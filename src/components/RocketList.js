@@ -18,13 +18,6 @@ const RocketList = () => {
 
   return (
     <ul className="allRockets">
-      {/* {rockets.forEach((rocket) => {
-        const { id } = rocket;
-        console.log(rocket.rocket_name);
-          <li>
-            <Rocket key={id} rocket={rocket} />
-          </li>;
-      })} */}
       {rockets.map((rocket) => (
         <Rocket key={rocket.id} data={rocket} />
       ))}
