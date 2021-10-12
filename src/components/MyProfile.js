@@ -1,7 +1,10 @@
 import React from 'react';
+import JoinedMissionsList from './JoinenMissions';
 
 const MyProfile = () => (
-  <h6>Profile Page Under COnstruction</h6>
+  <div className="container">
+    <JoinedMissionsList />
+  </div>
 );
 
 export default MyProfile;

@@ -31,7 +31,13 @@ export const reducer = (state = initialState, action) => {
       if (state !== initialState) {
         return state;
       }
-      return action.payload;
+      return action.payload.map((mission) => (
+        {
+          mission_id: mission.mission_id,
+          mission_name: mission.mission_name,
+          description: mission.description,
+        }
+      ));
     case JOIN_MISSION:
       return state.map((mission) => {
         if (mission.mission_id === action.payload) {
