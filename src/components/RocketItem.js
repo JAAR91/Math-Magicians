@@ -1,14 +1,13 @@
-/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './ReserveButton';
 
 const Rocket = (props) => {
-  // const { rocket_name } = prop;
   const { data } = props;
   const rocketName = data.rocket_name;
-  const { description } = data;
+  const { description, reserved } = data;
   const { flickr_images: imageUrl } = data;
+  const { id } = data;
 
   return (
     <div className="row p-3">
@@ -20,7 +19,7 @@ const Rocket = (props) => {
           <h5 className="rocketName">{rocketName}</h5>
           <div className="rocketDesription">
             <p>{description}</p>
-            <Button data={data} />
+            <Button id={id} reserved={reserved} />
           </div>
         </div>
       </div>
@@ -29,11 +28,12 @@ const Rocket = (props) => {
 };
 
 Rocket.propTypes = {
-  // flickr_images: PropTypes.array,
   data: PropTypes.shape({
     rocket_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     flickr_images: PropTypes.instanceOf(Array),
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 
