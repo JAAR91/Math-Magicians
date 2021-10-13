@@ -6,7 +6,7 @@ import { reserveRockets, cancelRockets } from '../redux/rockets/rockets';
 
 function ReserveButton(props) {
   return (
-    <button type="button" onClick={props.onClick}>
+    <button type="button" className="btn btn-primary" onClick={props.onClick}>
       Reserve Rocket
     </button>
   );
@@ -14,7 +14,7 @@ function ReserveButton(props) {
 
 function CancelButton(props) {
   return (
-    <button type="button" onClick={props.onClick}>
+    <button type="button" className="btn btn-outline-secondary" onClick={props.onClick}>
       Cancel Reservation
     </button>
   );

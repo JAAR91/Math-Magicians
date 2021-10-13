@@ -5,9 +5,15 @@ import Button from './ReserveButton';
 const Rocket = (props) => {
   const { data } = props;
   const rocketName = data.rocket_name;
-  const { description, reserved } = data;
+  const { id, description, reserved } = data;
   const { flickr_images: imageUrl } = data;
-  const { id } = data;
+
+  // eslint-disable-next-line consistent-return
+  const isReserved = () => {
+    if (reserved) {
+      <span className="bg-primary">reserved</span>;
+    }
+  };
 
   return (
     <div className="row p-3">
@@ -18,7 +24,10 @@ const Rocket = (props) => {
         <div className="rocketDetails">
           <h5 className="rocketName">{rocketName}</h5>
           <div className="rocketDesription">
-            <p>{description}</p>
+            <p>
+              {isReserved}
+              {description}
+            </p>
             <Button id={id} reserved={reserved} />
           </div>
         </div>
