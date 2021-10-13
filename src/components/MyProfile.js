@@ -1,7 +1,8 @@
 import React from 'react';
+import ReservedRockets from './ReservedRockets';
 
 const MyProfile = () => (
-  <h6>Profile Page Under COnstruction</h6>
+  <ReservedRockets />
 );
 
 export default MyProfile;
