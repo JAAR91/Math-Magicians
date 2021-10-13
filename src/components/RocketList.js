@@ -17,11 +17,11 @@ const RocketList = () => {
   }, []);
 
   return (
-    <ul className="allRockets">
+    <div className="container-lg mt-5">
       {rockets.map((rocket) => (
         <Rocket key={rocket.id} data={rocket} />
       ))}
-    </ul>
+    </div>
   );
 };
 
