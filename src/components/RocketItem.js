@@ -8,13 +8,6 @@ const Rocket = (props) => {
   const { id, description, reserved } = data;
   const { flickr_images: imageUrl } = data;
 
-  // eslint-disable-next-line consistent-return
-  const isReserved = () => {
-    if (reserved) {
-      <span className="bg-primary">reserved</span>;
-    }
-  };
-
   return (
     <div className="row p-3">
       <div className="col-sm-4 col-md-3">
