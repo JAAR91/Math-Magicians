@@ -1,25 +1,21 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import MissionsMock from './__Mocks__/Missions.mocks';
 import store from '../redux/configureStore';
 import MissionsLists from '../components/MissionsList';
 import { loadMissions } from '../redux/missions/Missions';
 import Mission from '../components/Mission';
-import { element } from 'prop-types';
 
-const renderWithRedux = (component) => {
-  return {
-    ...render(
-      <Provider store={store}>
-        {component}
-      </Provider>
-    )
-  };
-};
+const renderWithRedux = (component) => ({
+  ...render(
+    <Provider store={store}>
+      {component}
+    </Provider>,
+  ),
+});
 
 describe('Test Missions', () => {
-
   beforeEach(() => {
     store.dispatch(loadMissions(MissionsMock));
   });
@@ -45,4 +41,4 @@ describe('Test Missions', () => {
   });
 });
 
-
+// test
