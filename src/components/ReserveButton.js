@@ -1,9 +1,12 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { reserveRockets, cancelRockets } from '../redux/rockets/rockets';
 
 function ReserveButton(props) {
   return (
-    <button type="button" onClick={props}>
+    <button type="button" onClick={props.onClick}>
       Reserve Rocket
     </button>
   );
@@ -11,27 +14,29 @@ function ReserveButton(props) {
 
 function CancelButton(props) {
   return (
-    <button type="button" onClick={props}>
+    <button type="button" onClick={props.onClick}>
       Cancel Reservation
     </button>
   );
 }
 
-const reserveClick = (rocketId) => {
-  reserveRockets(rocketId);
-};
+const Button = (props) => {
+  const dispatch = useDispatch();
+  const { id, reserved } = props;
 
-const cancelClick = (rocketId) => {
-  cancelRockets(rocketId);
-};
-const Button = (rocket) => {
-  // <button type="button">Reserve Rocket</button>
-  const { id, status } = rocket;
+  const reserveClick = (id) => {
+    dispatch(reserveRockets(id));
+  };
+
+  const cancelClick = (rocketid) => {
+    dispatch(cancelRockets(rocketid));
+  };
+
   let button;
-  if (status) {
-    button = <CancelButton onClick={cancelClick(id)} />;
+  if (reserved) {
+    button = <CancelButton onClick={() => cancelClick(id)} />;
   } else {
-    button = <ReserveButton onClick={reserveClick(id)} />;
+    button = <ReserveButton onClick={() => reserveClick(id)} />;
   }
 
   return (
@@ -42,19 +47,3 @@ const Button = (rocket) => {
 };
 
 export default Button;
-
-// render() {
-//   const reservedStatus = prop.status
-//   let button;
-//   if (reservedStatus) {
-//     button = <CancelButton onClick={this.handleLogoutClick} />;
-//   } else {
-//     button = <ReserveButton onClick={this.handleLoginClick} />;
-//   }
-
-//   return (
-//     <div>
-//       {button}
-//     </div>
-//   );
-// }
