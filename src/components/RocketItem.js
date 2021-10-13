@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReserveButton from './ReserveButton';
+import Button from './ReserveButton';
 
 const Rocket = (props) => {
   // const { rocket_name } = prop;
@@ -11,15 +11,17 @@ const Rocket = (props) => {
   const { flickr_images: imageUrl } = data;
 
   return (
-    <div>
-      <div className="rocketImage">
-        <img src={imageUrl[0]} alt={rocketName} />
+    <div className="row p-3">
+      <div className="col-sm-4 col-md-3">
+        <img src={imageUrl[0]} alt={rocketName} className="rocket_image" style={{ width: '100%' }} />
       </div>
-      <div className="rocketDetails">
-        <h5 className="rocketName">{rocketName}</h5>
-        <div className="rocketDesription">
-          <p>{description}</p>
-          <ReserveButton />
+      <div className="col-sm-8 col-md-9">
+        <div className="rocketDetails">
+          <h5 className="rocketName">{rocketName}</h5>
+          <div className="rocketDesription">
+            <p>{description}</p>
+            <Button data={data} />
+          </div>
         </div>
       </div>
     </div>
