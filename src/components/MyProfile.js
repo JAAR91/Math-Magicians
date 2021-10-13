@@ -1,14 +1,12 @@
 import React from 'react';
 import JoinedMissionsList from './JoinenMissions';
+import ReservedRockets from './ReservedRockets';
 
 const MyProfile = () => (
   <div className="container">
     <JoinedMissionsList />
+    <ReservedRockets />
   </div>
-import ReservedRockets from './ReservedRockets';
-
-const MyProfile = () => (
-  <ReservedRockets />
 );
 
 export default MyProfile;
