@@ -17,6 +17,9 @@ const Rocket = (props) => {
         <div className="rocketDetails">
           <h5 className="rocketName">{rocketName}</h5>
           <div className="rocketDesription">
+            {reserved
+              ? <span className="badge rounded-pill me-3 bg-info text-white">reserved</span>
+              : null}
             <p>
               {description}
             </p>
