@@ -12,7 +12,9 @@ const RocketList = () => {
   const loadRocketsAction = bindActionCreators(loadRocketsData, dispatch);
 
   useEffect(() => {
-    loadRocketsAction();
+    if (rockets.length === 0) {
+      loadRocketsAction();
+    }
     return null;
   }, []);
 

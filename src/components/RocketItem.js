@@ -18,6 +18,9 @@ const Rocket = (props) => {
           <h5 className="rocketName">{rocketName}</h5>
           <div className="rocketDesription">
             <p>
+              {reserved
+                ? <span className="badge rounded-pill me-3 bg-info text-white">reserved</span>
+                : null}
               {description}
             </p>
             <Button id={id} reserved={reserved} />
